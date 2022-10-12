@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자습-회원가입</title>
+    <style>
+        h1{padding: auto; }
+    </style>
+</head>
+<body>
+    <h1>* 회원 가입 *</h1>
+    <fieldset>
+        <form action="/JSPProject/signUp" method="post">
+            <table>
+                <tr>
+                    <th>아이디 :</th>
+                    <td> <label for="id"></label><input type="text" name="id"> <br></td>
+                </tr>
+                <tr>
+                    <th>비밀번호 :</th>
+                    <td><input type="password" name="pw"> <br></td>
+                </tr>
+                <tr>
+                    <th>비밀번호 확인 :</th>
+                    <td> <input type="password" name="pw"> <br></td>
+                </tr>
+                <tr>
+                    <th>이름 :</th>
+                    <td><input type="text" name="name"> <br></td>
+                </tr>
+                <tr>
+                    <th>이메일 : </th>
+                    <td><input type="email" name="email"><br></td>
+                </tr>
+                <tr>
+                    <th>취미 :</th>
+                    <td>
+                       영화 <input type="checkbox" name="hobby" values="영화">
+                        코딩 <input type="checkbox" name="hobby" values="코딩">
+                        공부 <input type="checkbox" name="hobby" values="공부"><br>
+                        독서 <input type="checkbox" name="hobby" values="독서">
+                        요리 <input type="checkbox" name="hobby" values="요리">
+                        운동 <input type="checkbox" name="hobby" values="운동"> 
+                    </td>
+                </tr>
+ 
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>
