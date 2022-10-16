@@ -17,6 +17,10 @@
             background-color:rgb(204, 232, 202);
             
         }
+        
+        .bb:nth-child(2n){
+            background-color: gainsboro;
+        }
     
     </style>
 </head>
