@@ -28,7 +28,7 @@ public class MainDAO {
 			prop = new Properties();
             
             String filePath 
-            = JDBCTemplate.class.getResource("/edu/kh/project/sql/main-sql.xml").getPath();
+            = MainDAO.class.getResource("/edu/kh/project/sql/main-sql.xml").getPath();
 
             prop.loadFromXML( new FileInputStream(filePath) );
 			

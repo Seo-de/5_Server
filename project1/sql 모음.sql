@@ -248,3 +248,26 @@ COMMIT;
 
 -- 게시판 종류 조회
 SELECT * FROM BOARD_TYPE BT ORDER BY 1;
+
+
+-- 회원 샘플데이터 삽입
+INSERT INTO "MEMBER"
+VALUES(SEQ_MEMBER_NO.NEXTVAL, 'user01@kh.or.kr', 'pass01!', '유저일', '01012341234',
+		'04540,,서울시 중구 남대문로 120,,2층', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+	
+INSERT INTO "MEMBER"	
+VALUES(SEQ_MEMBER_NO.NEXTVAL, 'user02@kh.or.kr', 'pass02!', '유저이', '01012345678',
+		'04540,,서울시 중구 남대문로 120,,3층', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+	/* 주소를 보통 컬럼을 나눠서 하는데 이번엔 null 값이 많아서 ,,로 반정규화 시켜준거래 */
+
+COMMIT;
+
+
+-- 로그인 SQL
+SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME,
+	MEMBER_TELL, MEMBER_ADDRESS, PROFILE_IMG, AUTHORITY, 
+	TO_CHAR(ENROLL_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초" ') AS ENROLL_DATE 
+FROM "MEMBER"
+WHERE MEMBER_DEL_FL = 'N'
+AND MEMBER_EMAIL = 'user01@kh.or.kr'
+AND MEMBER_PW = 'pass01!';
