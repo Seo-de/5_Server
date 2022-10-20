@@ -21,5 +21,13 @@
 
 	</entry>
 
+	<!-- 회원 정보 수정 -->
+	<entry key="updateMember">
+		UPDATE "MEMBER" SET
+		MEMBER_NICKNAME = ?, 
+		MEMBER_TELL = ?,
+		MEMBER_ADDRESS = ?
+		WHERE MEMBER_NO = ?
+	</entry>
    
 </properties>
