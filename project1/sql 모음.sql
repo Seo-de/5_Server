@@ -273,3 +273,11 @@ AND MEMBER_EMAIL = 'user01@kh.or.kr'
 AND MEMBER_PW = 'pass01!';
 
 SELECT * FROM "MEMBER";
+
+-- 회원 정보 수정
+UPDATE "MEMBER" SET
+MEMBER_NICKNAME = '변경된 닉네임', 
+MEMBER_TELL = '01098765432',
+MEMBER_ADDRESS = '98765,,변경된,,주소'
+WHERE MEMBER_NO = 4;
+-- 로그인한 회원의 번호
