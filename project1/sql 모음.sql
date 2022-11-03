@@ -256,7 +256,7 @@ VALUES(SEQ_MEMBER_NO.NEXTVAL, 'user01@kh.or.kr', 'pass01!', '유저일', '010123
 		'04540,,서울시 중구 남대문로 120,,2층', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 	
 INSERT INTO "MEMBER"	
-VALUES(SEQ_MEMBER_NO.NEXTVAL, 'user02@kh.or.kr', 'pass02!', '유저이', '01012345678',
+VALUES(SEQ_MEMBER_NO.NEXTVAL, 'test@test', 'test!', '테스트', '01012345678',
 		'04540,,서울시 중구 남대문로 120,,3층', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 	/* 주소를 보통 컬럼을 나눠서 하는데 이번엔 null 값이 많아서 ,,로 반정규화 시켜준거래 */
 
@@ -280,9 +280,13 @@ MEMBER_NICKNAME = '변경된 닉네임',
 MEMBER_TELL = '01098765432',
 MEMBER_ADDRESS = '98765,,변경된,,주소'
 WHERE MEMBER_NO = 4;
+-- 회원 정보 수정
+UPDATE "MEMBER" SET
+MEMBER_DEL_FL='N'
+WHERE MEMBER_EMAIL = 'id@com';
 -- 로그인한 회원의 번호
 
-
+ROLLBACK;
 
 UPDATE "MEMBER" SET
 MEMBER_PW = '$2a$10$.KWlMmZegel7tmo8IwEKHu4G.fpUn1W9Y9vsleHMWAV7bH/XcHeDW';
