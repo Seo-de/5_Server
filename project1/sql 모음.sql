@@ -274,6 +274,7 @@ AND MEMBER_PW = 'pass01!';
 
 SELECT * FROM "MEMBER";
 
+
 -- 회원 정보 수정
 UPDATE "MEMBER" SET
 MEMBER_NICKNAME = '변경된 닉네임', 
@@ -301,4 +302,12 @@ SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_PW, MEMBER_NICKNAME,
 FROM "MEMBER"
 WHERE MEMBER_DEL_FL = 'N'
 AND MEMBER_EMAIL = 'user02@kh.or.kr';
+
+SELECT * FROM "MEMBER";
+
+-- 탈퇴하지 않은 회원 중 이메일이 같은 사람의 수 조회
+-- 0 : 중복 x / 1 : 중복 O
+SELECT COUNT(*) FROM "MEMBER"
+WHERE MEMBER_EMAIL = 'user01@kh.or.kr'
+AND MEMBER_DEL_FL = 'N';
 
