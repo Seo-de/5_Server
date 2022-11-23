@@ -627,3 +627,23 @@ FROM DUAL) A
 
 SELECT * FROM BOARD_IMG;
 ROLLBACK;
+
+
+-- 이미지 삭제
+--DELETE FROM BOARD_IMG
+--WHERE BOARD_NO = 2005
+--AND IMG_ORDER = 2
+--OR IMG_ORDER 4;
+-- 같은 방법
+DELETE FROM BOARD_IMG
+WHERE BOARD_NO = 2005
+AND IMG_ORDER IN (1,5);
+-- X 버튼을 누를 때마다 지운 문자열을 만들어서 서버로 제출
+
+
+-- 게시글 수정(제목, 내용)
+UPDATE BOARD SET
+BOARD_TITLE = #{boardTitle},
+BOARD_CONTENT = #{boardContent}
+WHERE BOARD_NO = #{boardNo}
+
